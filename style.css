@@ -16,16 +16,56 @@
 
 section {
 	min-height: 100vh;
-	background-color: #000000;
 	margin-top: 20px;
 }
 
-section:first-child {
+.relative {
 	position: relative;
+	background-image: url("./image.png");
+	background-position: bottom center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
-section:nth-child(2) {
-	padding-top: 150px;
+.content {
+	position: relative;
+	z-index: 1;
+}
+
+.relative::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity: 0.7;
+	z-index: 0;
+}
+
+.image {
+	position: relative;
+	background-image: url("./image.png");
+	background-position: bottom center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.image::after {
+	content: "";
+	background-image: url("https://i0.wp.com/scottishgrocers.co.uk/wp-content/uploads/2020/10/Barny-Chocolate-Bears-8s.png?fit=800%2C800&ssl=1");
+	background-position: center;
+	background-size: contain;
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	opacity: 0.5;
+}
+
+.image::before {
+	content: url("https://i0.wp.com/scottishgrocers.co.uk/wp-content/uploads/2020/10/Barny-Chocolate-Bears-8s.png?fit=800%2C800&ssl=1");
+	opacity: 0.5;
 }
 
 .absolute1 {
