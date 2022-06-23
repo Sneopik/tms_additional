@@ -17,10 +17,7 @@
 
 .box-list {
 	display: grid;
-	grid-template-columns: minmax(50px, 250px) minmax(150px, 1fr) minmax(
-			10px,
-			500px
-		);
+	grid-template-columns: repeat(auto-fill, 400px);
 	column-gap: 25px;
 	row-gap: 25px;
 }
@@ -29,4 +26,38 @@
 	width: 100%;
 	height: 100px;
 	background-color: #ffffff;
+}
+
+.template-areas {
+	display: grid;
+	grid-template-areas:
+		"first box4 box2"
+		"box3 box4 box2";
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 15px;
+	row-gap: 15px;
+}
+
+.box1,
+.box2,
+.box3,
+.box4 {
+	min-height: 100px;
+	background-color: #ffffff;
+}
+
+.box1 {
+	grid-area: first;
+}
+
+.box2 {
+	grid-area: box2;
+}
+
+.box3 {
+	grid-area: box4;
+}
+
+.box4 {
+	grid-area: box3;
 }
